@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('customer/upload-image','ImageController@uploadImageForm')->name('customer.upload-image');
+Route::post('customer/storeimage','ImageController@uploadImage')->name('customer.storeimage');
+Route::get('customer/upload-pdf','ImageController@uploadPdfForm')->name('customer.upload-pdf');
+Route::get('customer/image','ImageController@imageRandomView')->name('customer.image-random-view');
 
 Route::get('customer/login','Customer\LoginController@showLoginForm')->name('customer.login');
 Route::post('customer/login','Customer\LoginController@login');
@@ -29,7 +32,7 @@ Route::post('customer/register','Customer\RegisterController@register');
 
 
 Route::get('admin/login','Admin\LoginController@showLoginForm')->name('admin.login');
-Route::post('admin/login','Admin\LoginController@login');
+//Route::post('admin/login','Admin\LoginController@login');
 Route::post('admin/logout','Admin\LoginController@logout')->name('admin.logout');
 Route::post('admin/password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
 Route::get('admin/password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
@@ -39,8 +42,8 @@ Route::get('admin/register','Admin\RegisterController@showRegistrationForm')->na
 Route::post('admin/register','Admin\RegisterController@register');
 
 
-Route::get('manager/login','Manager\LoginController@showLoginForm')->name('manager.login');
-Route::post('manager/login','Manager\LoginController@login');
+//Route::get('manager/login','Manager\LoginController@showLoginForm')->name('manager.login');
+//Route::post('manager/login','Manager\LoginController@login');
 Route::post('manager/logout','Manager\LoginController@logout')->name('manager.logout');
 Route::post('manager/password/email','Manager\ForgotPasswordController@sendResetLinkEmail')->name('manager.password.email');
 Route::get('manager/password/reset','Manager\ForgotPasswordController@showLinkRequestForm')->name('manager.password.request');
@@ -56,3 +59,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('customer/home', 'CustomerController@index')->name('customer.home');
 Route::get('admin/home', 'AdminController@index')->name('admin.home');
 Route::get('manager/home', 'ManagerController@index')->name('manager.home');
+
+Route::get('login/google', 'Auth\LoginController@redirectToProvider');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');

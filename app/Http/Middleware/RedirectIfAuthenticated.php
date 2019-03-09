@@ -17,28 +17,31 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        /*if ($guard == "admin" || $guard == "manager") {
-            $this->guards = 'web';
-        }*/
+        
         switch($guard) {
+            
             case 'customer':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('customer/home');
+                    //return redirect('customer/home');
+                    return $next($request);
                 }
                 break;
             case 'admin':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('admin/home');
+                    //return redirect('admin/home');
+                    return $next($request);
                 }
                 break;
             case 'manager':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('manager/home');
+                    //return redirect('manager/home');
+                    return $next($request);
                 }
                 break;
             case 'web':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('/home');
+                    //return redirect('/home');
+                    return $next($request);
                 }
                 break;
         }

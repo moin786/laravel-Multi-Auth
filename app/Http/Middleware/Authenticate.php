@@ -23,13 +23,21 @@ class Authenticate extends Middleware
     public function handle($request, Closure $next, ...$guards)
     {
         $this->guards = $guards;
+        if ($guards == "customer") {
+            $this->guards = 'customer';
+            $this->authenticate($request, $this->guards);
+            return $next($request);
+        }
+        
         if ($guards == "admin") {
             $this->guards = 'web';
+            $this->authenticate($request, $this->guards);
             return $next($request);
         } 
         
         if ($guards == "manager") {
             $this->guards = 'admin';
+            $this->authenticate($request, $this->guards);
             return $next($request);
         }
         $this->authenticate($request, $guards);

@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'System Admin',
             'email' => 'moinuddin7@gmail.com',
             'password' => bcrypt('12345678'),
-            'type' => 'superadmin'
+            'type' => 'superadmin',
+            'guards' => 'web'
         ]);
     }
 }
