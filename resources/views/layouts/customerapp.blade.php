@@ -50,7 +50,7 @@
                             @endif
                         @else
                             <li class="nav-item active">
-                              <a class="nav-link" href="{{ route('customer.upload-image')}}">Media <span class="sr-only">(current)</span></a>
+                              <a class="nav-link" href="#">Media <span class="sr-only">(current)</span></a>
                             </li>
                             
                             <li class="nav-item dropdown">

@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('customer/upload-image','ImageController@uploadImageForm')->name('customer.upload-image');
-Route::post('customer/storeimage','ImageController@uploadImage')->name('customer.storeimage');
-Route::get('customer/upload-pdf','ImageController@uploadPdfForm')->name('customer.upload-pdf');
-Route::get('customer/image','ImageController@imageRandomView')->name('customer.image-random-view');
+//Route::get('customer/upload-image','ImageController@uploadImageForm')->name('customer.upload-image');
+//Route::post('customer/storeimage','ImageController@uploadImage')->name('customer.storeimage');
+//Route::get('customer/upload-pdf','ImageController@uploadPdfForm')->name('customer.upload-pdf');
+//Route::get('customer/image','ImageController@imageRandomView')->name('customer.image-random-view');
 
 Route::get('customer/login','Customer\LoginController@showLoginForm')->name('customer.login');
 Route::post('customer/login','Customer\LoginController@login');
