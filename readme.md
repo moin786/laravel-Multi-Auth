@@ -14,7 +14,7 @@ What things you need to install the software.
 ### Install
 Clone the git repository on your computer
 
-```$ git clone https://github.com/moin786/laravel58multiauth.git```
+```https://github.com/moin786/laravel-Multi-Auth.git```
 
 
 You can also download the entire repository as a zip file and unpack in on your computer if you do not have git
@@ -45,7 +45,7 @@ $ composer install
   ```$ php artisan migrate```
 
 
-- Seed Database
+- Seed Database ### This will create default system user into main users table
 
   ```$ php artisan db:seed```
 
@@ -57,51 +57,6 @@ $ composer install
 
   ```$ php artisan serve```
 
-
-## Built With
-* System admin login http://127.0.0.1:8000/login
-* Admin login http://127.0.0.1:8000/admin/login
-* http://127.0.0.1:8000/manager/login
-* http://127.0.0.1:8000/customer/login
-
-
-## Deail Authentication Route Lists
-Route::get('customer/login','Customer\LoginController@showLoginForm')->name('customer.login');
-Route::post('customer/login','Customer\LoginController@login');
-Route::post('customer/logout','Customer\LoginController@logout')->name('customer.logout');
-Route::post('customer/password/email','Customer\ForgotPasswordController@sendResetLinkEmail')->name('customer.password.email');
-Route::get('customer/password/reset','Customer\ForgotPasswordController@showLinkRequestForm')->name('customer.password.request');
-Route::get('customer/password/reset','Customer\ResetPasswordController@reset')->name('customer.password.update');
-Route::get('customer/password/reset/{token}','Customer\ResetPasswordController@showResetForm ')->name('customer.password.reset');
-Route::get('customer/register','Customer\RegisterController@showRegistrationForm')->name('customer.register');
-Route::post('customer/register','Customer\RegisterController@register');
-
-
-Route::get('admin/login','Admin\LoginController@showLoginForm')->name('admin.login');
-Route::post('admin/login','Admin\LoginController@login');
-Route::post('admin/logout','Admin\LoginController@logout')->name('admin.logout');
-Route::post('admin/password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
-Route::get('admin/password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
-Route::get('admin/password/reset','Admin\ResetPasswordController@reset')->name('admin.password.update');
-Route::get('admin/password/reset/{token}','Admin\ResetPasswordController@showResetForm ')->name('admin.password.reset');
-Route::get('admin/register','Admin\RegisterController@showRegistrationForm')->name('admin.register');
-Route::post('admin/register','Admin\RegisterController@register');
-
-
-Route::get('manager/login','Manager\LoginController@showLoginForm')->name('manager.login');
-Route::post('manager/login','Manager\LoginController@login');
-Route::post('manager/logout','Manager\LoginController@logout')->name('manager.logout');
-Route::post('manager/password/email','Manager\ForgotPasswordController@sendResetLinkEmail')->name('manager.password.email');
-Route::get('manager/password/reset','Manager\ForgotPasswordController@showLinkRequestForm')->name('manager.password.request');
-Route::get('manager/password/reset','Manager\ResetPasswordController@reset')->name('manager.password.update');
-Route::get('manager/password/reset/{token}','Manager\ResetPasswordController@showResetForm ')->name('manager.password.reset');
-Route::get('manager/register','Manager\RegisterController@showRegistrationForm')->name('manager.register');
-Route::post('manager/register','Manager\RegisterController@register');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('customer/home', 'CustomerController@index')->name('customer.home');
-Route::get('admin/home', 'AdminController@index')->name('admin.home');
-Route::get('manager/home', 'ManagerController@index')->name('manager.home');
+### Note: 
+  ``` Chek your auth.php file inside config folder, then you can understand how to setup guard.
+  ``` Analyse your Controller folder of Http folder inside app folder, you will find morethan two folder of users type, and into those         folders files are exact copy of Auth folder, so open up each file and examine how it is done? . keep smile :) 
