@@ -59,4 +59,5 @@ $ composer install
 
 ### Note: 
   ``` Chek your auth.php file inside config folder, then you can understand how to setup guard.
-  ``` Analyse your Controller folder of Http folder inside app folder, you will find morethan two folder of users type, and into those         folders files are exact copy of Auth folder, so open up each file and examine how it is done? . keep smile :) 
+      Analyse your Controller folder of Http folder inside app folder, you will find morethan two folder of users type, and into those         folders files are exact copy of Auth folder, so open up each file and examine how it is done? . keep smile :) 
+  ```
