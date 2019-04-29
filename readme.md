@@ -59,7 +59,7 @@ $ composer install
 
 ### Note: 
 ```
-Chek your auth.php file inside config folder, then you can understand how to setup guard.
+Inside route folder analyze web.php file. Chek your auth.php file inside config folder, then you can understand how to setup guard.
 Analyse your Controller folder of Http folder inside app folder, you will find morethan two folder of users type, and into those         folders files are exact copy of Auth folder, so open up each file and examine how it is done? . 
 Login into default root user, root user can create admin, then login into admin user, admin user can create manager, manager and admin can manage customer, you can register customer from registration link in outside. try with every and each user type then you will realize Multi guard authentication procedure. 
 ```
